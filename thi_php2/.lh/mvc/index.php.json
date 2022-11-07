@@ -1,0 +1,18 @@
+{
+    "sourceFile": "mvc/index.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1656047173210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1656047173210,
+            "name": "Commit-0",
+            "content": "<?php\nsession_start();\n// const BASE_URL = \"http://localhost/php2/we17101-php2/mvc/\";\nconst BASE_URL = \"\"http://localhost/thi_php2/mvc/\";\nrequire_once './vendor/autoload.php';\nrequire_once './commons/db.php';\nrequire_once './commons/route.php';\n\n?>"
+        }
+    ]
+}

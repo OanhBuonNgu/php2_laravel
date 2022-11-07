@@ -1,0 +1,30 @@
+{
+    "sourceFile": "mvc/app/models/Laptop.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1656047417728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656047423019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n namespace App\\Models;\n use Illuminate\\Database\\Eloquent\\Model;\n class Passengers  extends Model{\n-    protected $table = \"computer_brands\";\n+    protected $table = \"laptops\";\n     public $timestamps = false;\n \n     protected $fillable = [\n         'name','image','brand_id','detail','price','created_at','updated_at'\n"
+                },
+                {
+                    "date": 1656047448352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     protected $fillable = [\n         'name','image','brand_id','detail','price','created_at','updated_at'\n     ];\n \n-    public function trains(){\n+    public function laptops(){\n         return $this->belongsTo(\\App\\Models\\Trains::class, 'train_id', 'id');\n     }\n }\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047458780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n         'name','image','brand_id','detail','price','created_at','updated_at'\n     ];\n \n     public function laptops(){\n-        return $this->belongsTo(\\App\\Models\\Trains::class, 'train_id', 'id');\n+        return $this->belongsTo(\\App\\Models\\Laptops::class, 'train_id', 'id');\n     }\n }\n ?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1656047417728,
+            "name": "Commit-0",
+            "content": "<?php\nnamespace App\\Models;\nuse Illuminate\\Database\\Eloquent\\Model;\nclass Passengers  extends Model{\n    protected $table = \"computer_brands\";\n    public $timestamps = false;\n\n    protected $fillable = [\n        'name','image','brand_id','detail','price','created_at','updated_at'\n    ];\n\n    public function trains(){\n        return $this->belongsTo(\\App\\Models\\Trains::class, 'train_id', 'id');\n    }\n}\n?>"
+        }
+    ]
+}

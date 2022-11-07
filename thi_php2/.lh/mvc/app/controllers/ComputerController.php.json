@@ -1,0 +1,150 @@
+{
+    "sourceFile": "mvc/app/controllers/ComputerController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 33,
+            "patches": [
+                {
+                    "date": 1656050306410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656050314498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php \r\n namespace App\\Controllers;\r\n \r\n-use App\\Models\\Trains;\r\n+use App\\Models\\Computer_brands;\r\n \r\n \r\n \r\n class TrainsController extends BaseController{\r\n"
+                },
+                {
+                    "date": 1656050320117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n use App\\Models\\Computer_brands;\r\n \r\n \r\n \r\n-class TrainsController extends BaseController{\r\n+class ComputerController extends BaseController{\r\n     public function listTrain(){\r\n         $trains = Trains::all();\r\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n"
+                },
+                {
+                    "date": 1656050330736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n \r\n \r\n class ComputerController extends BaseController{\r\n-    public function listTrain(){\r\n+    public function listComputer(){\r\n         $trains = Trains::all();\r\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n             $trains = Trains::all();\r\n"
+                },
+                {
+                    "date": 1656050342375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \r\n \r\n class ComputerController extends BaseController{\r\n     public function listComputer(){\r\n-        $trains = Trains::all();\r\n+        $computer_brands = Trains::all();\r\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n             $trains = Trains::all();\r\n         }else{\r\n"
+                },
+                {
+                    "date": 1656050353997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \r\n \r\n class ComputerController extends BaseController{\r\n     public function listComputer(){\r\n-        $computer_brands = Trains::all();\r\n+        $computer_brands = Computer_brands::all();\r\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n             $trains = Trains::all();\r\n         }else{\r\n"
+                },
+                {
+                    "date": 1656050367563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     public function listComputer(){\r\n         $computer_brands = Computer_brands::all();\r\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n-            $trains = Trains::all();\r\n+            $computer_brands = Trains::all();\r\n         }else{\r\n             $trains = Trains::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n         return $this->render('train.listTrain', compact('trains','keyword'));\r\n"
+                },
+                {
+                    "date": 1656050386630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,11 @@\n     public function listComputer(){\r\n         $computer_brands = Computer_brands::all();\r\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n-            $computer_brands = Trains::all();\r\n+            $computer_brands = Computer_brands::all();\r\n         }else{\r\n-            $trains = Trains::where('name', 'like', \"%$keyword%\")->get();\r\n+            $computer_brands = Computer_brands::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n         return $this->render('train.listTrain', compact('trains','keyword'));\r\n     }\r\n     public function addTrain(){\r\n"
+                },
+                {
+                    "date": 1656050394362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n             $computer_brands = Computer_brands::all();\r\n         }else{\r\n             $computer_brands = Computer_brands::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n-        return $this->render('train.listTrain', compact('trains','keyword'));\r\n+        return $this->render('computer.listTrain', compact('trains','keyword'));\r\n     }\r\n     public function addTrain(){\r\n         $trains = Trains::all();\r\n         return $this->render('train.addTrain', compact('trains'));\r\n"
+                },
+                {
+                    "date": 1656050401608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n             $computer_brands = Computer_brands::all();\r\n         }else{\r\n             $computer_brands = Computer_brands::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n-        return $this->render('computer.listTrain', compact('trains','keyword'));\r\n+        return $this->render('computer.listComputer', compact('trains','keyword'));\r\n     }\r\n     public function addTrain(){\r\n         $trains = Trains::all();\r\n         return $this->render('train.addTrain', compact('trains'));\r\n"
+                },
+                {
+                    "date": 1656050413009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n             $computer_brands = Computer_brands::all();\r\n         }else{\r\n             $computer_brands = Computer_brands::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n-        return $this->render('computer.listComputer', compact('trains','keyword'));\r\n+        return $this->render('computer.listComputer', compact('computer_brands','keyword'));\r\n     }\r\n     public function addTrain(){\r\n         $trains = Trains::all();\r\n         return $this->render('train.addTrain', compact('trains'));\r\n"
+                },
+                {
+                    "date": 1656050421639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n             $computer_brands = Computer_brands::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n         return $this->render('computer.listComputer', compact('computer_brands','keyword'));\r\n     }\r\n-    public function addTrain(){\r\n+    public function addComputer(){\r\n         $trains = Trains::all();\r\n         return $this->render('train.addTrain', compact('trains'));\r\n     }\r\n     public function addNewTrain(){\r\n"
+                },
+                {
+                    "date": 1656050438535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         }\r\n         return $this->render('computer.listComputer', compact('computer_brands','keyword'));\r\n     }\r\n     public function addComputer(){\r\n-        $trains = Trains::all();\r\n+        $computer_brands = Computer_brands::all();\r\n         return $this->render('train.addTrain', compact('trains'));\r\n     }\r\n     public function addNewTrain(){\r\n         \r\n"
+                },
+                {
+                    "date": 1656050446900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         return $this->render('computer.listComputer', compact('computer_brands','keyword'));\r\n     }\r\n     public function addComputer(){\r\n         $computer_brands = Computer_brands::all();\r\n-        return $this->render('train.addTrain', compact('trains'));\r\n+        return $this->render('computer_brands.addTrain', compact('trains'));\r\n     }\r\n     public function addNewTrain(){\r\n         \r\n         $model = new Trains();\r\n"
+                },
+                {
+                    "date": 1656050454075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         return $this->render('computer.listComputer', compact('computer_brands','keyword'));\r\n     }\r\n     public function addComputer(){\r\n         $computer_brands = Computer_brands::all();\r\n-        return $this->render('computer_brands.addTrain', compact('trains'));\r\n+        return $this->render('computer_brands.addComputer', compact('trains'));\r\n     }\r\n     public function addNewTrain(){\r\n         \r\n         $model = new Trains();\r\n"
+                },
+                {
+                    "date": 1656050463669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         return $this->render('computer.listComputer', compact('computer_brands','keyword'));\r\n     }\r\n     public function addComputer(){\r\n         $computer_brands = Computer_brands::all();\r\n-        return $this->render('computer_brands.addComputer', compact('trains'));\r\n+        return $this->render('computer_brands.addComputer', compact('computer+brand'));\r\n     }\r\n     public function addNewTrain(){\r\n         \r\n         $model = new Trains();\r\n"
+                },
+                {
+                    "date": 1656050476874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         return $this->render('computer.listComputer', compact('computer_brands','keyword'));\r\n     }\r\n     public function addComputer(){\r\n         $computer_brands = Computer_brands::all();\r\n-        return $this->render('computer_brands.addComputer', compact('computer+brand'));\r\n+        return $this->render('computer.addComputer', compact('computer_brand'));\r\n     }\r\n     public function addNewTrain(){\r\n         \r\n         $model = new Trains();\r\n"
+                },
+                {
+                    "date": 1656050483080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         return $this->render('computer.listComputer', compact('computer_brands','keyword'));\r\n     }\r\n     public function addComputer(){\r\n         $computer_brands = Computer_brands::all();\r\n-        return $this->render('computer.addComputer', compact('computer_brand'));\r\n+        return $this->render('computer.addComputer', compact('computer_brands'));\r\n     }\r\n     public function addNewTrain(){\r\n         \r\n         $model = new Trains();\r\n"
+                },
+                {
+                    "date": 1656050492177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     public function addComputer(){\r\n         $computer_brands = Computer_brands::all();\r\n         return $this->render('computer.addComputer', compact('computer_brands'));\r\n     }\r\n-    public function addNewTrain(){\r\n+    public function addComputer(){\r\n         \r\n         $model = new Trains();\r\n         $model->fill($_POST);\r\n \r\n"
+                },
+                {
+                    "date": 1656050498335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n         return $this->render('computer.addComputer', compact('computer_brands'));\r\n     }\r\n     public function addComputer(){\r\n         \r\n-        $model = new Trains();\r\n+        $model = new Computer_brands();\r\n         $model->fill($_POST);\r\n \r\n         $model->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n"
+                },
+                {
+                    "date": 1656050506586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         $model = new Computer_brands();\r\n         $model->fill($_POST);\r\n \r\n         $model->save();\r\n-        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n+        header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     public function removeTrain($id){\r\n         Trains::destroy($id);\r\n         header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n"
+                },
+                {
+                    "date": 1656050515617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     public function removeTrain($id){\r\n         Trains::destroy($id);\r\n-        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n+        header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     public function trainEditForm($id){\r\n         $trains = Trains::find($id);\r\n         $passengers = Passengers::all();\r\n"
+                },
+                {
+                    "date": 1656050528269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n \r\n         $model->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n-    public function removeTrain($id){\r\n+    public function removeComputer($id){\r\n         Trains::destroy($id);\r\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     public function trainEditForm($id){\r\n@@ -42,9 +42,9 @@\n         $trains = Trains::find($id);\r\n         \r\n         $trains->fill($_POST);\r\n         $trains->save();\r\n-        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n+        header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656050535570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         $model->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     public function removeComputer($id){\r\n-        Trains::destroy($id);\r\n+        Computer_brands::destroy($id);\r\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     public function trainEditForm($id){\r\n         $trains = Trains::find($id);\r\n"
+                },
+                {
+                    "date": 1656050546631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     public function removeComputer($id){\r\n         Computer_brands::destroy($id);\r\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n-    public function trainEditForm($id){\r\n+    public function computerEditForm($id){\r\n         $trains = Trains::find($id);\r\n         $passengers = Passengers::all();\r\n         return $this->render('train.editTrain', compact('passengers','trains'));\r\n     }\r\n"
+                },
+                {
+                    "date": 1656050563005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,9 @@\n         Computer_brands::destroy($id);\r\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     public function computerEditForm($id){\r\n-        $trains = Trains::find($id);\r\n-        $passengers = Passengers::all();\r\n+        $computer_brands = Computer_brands::find($id);\r\n         return $this->render('train.editTrain', compact('passengers','trains'));\r\n     }\r\n     public function saveEditTrain($id){\r\n         \r\n"
+                },
+                {
+                    "date": 1656050574117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     public function computerEditForm($id){\r\n         $computer_brands = Computer_brands::find($id);\r\n-        return $this->render('train.editTrain', compact('passengers','trains'));\r\n+        return $this->render('computer.editComputer', compact('passengers','trains'));\r\n     }\r\n     public function saveEditTrain($id){\r\n         \r\n         $trains = Trains::find($id);\r\n"
+                },
+                {
+                    "date": 1656050586036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     public function computerEditForm($id){\r\n         $computer_brands = Computer_brands::find($id);\r\n-        return $this->render('computer.editComputer', compact('passengers','trains'));\r\n+        return $this->render('computer.editComputer', compact('computer_brands'));\r\n     }\r\n     public function saveEditTrain($id){\r\n         \r\n         $trains = Trains::find($id);\r\n"
+                },
+                {
+                    "date": 1656050593272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     public function computerEditForm($id){\r\n         $computer_brands = Computer_brands::find($id);\r\n         return $this->render('computer.editComputer', compact('computer_brands'));\r\n     }\r\n-    public function saveEditTrain($id){\r\n+    public function saveEditComputer($id){\r\n         \r\n         $trains = Trains::find($id);\r\n         \r\n         $trains->fill($_POST);\r\n"
+                },
+                {
+                    "date": 1656050628165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     public function computerEditForm($id){\r\n         $computer_brands = Computer_brands::find($id);\r\n         return $this->render('computer.editComputer', compact('computer_brands'));\r\n     }\r\n-    public function saveEditComputer($id){\r\n+    public function saveEditTrain($id){\r\n         \r\n         $trains = Trains::find($id);\r\n         \r\n         $trains->fill($_POST);\r\n"
+                },
+                {
+                    "date": 1656050642786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,12 +37,12 @@\n         return $this->render('computer.editComputer', compact('computer_brands'));\r\n     }\r\n     public function saveEditTrain($id){\r\n         \r\n-        $trains = Trains::find($id);\r\n+        $computer_brands = Trains::find($id);\r\n         \r\n-        $trains->fill($_POST);\r\n-        $trains->save();\r\n+        $computer_brands->fill($_POST);\r\n+        $computer_brands->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n     }\r\n     \r\n \r\n"
+                },
+                {
+                    "date": 1656050648676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     public function computerEditForm($id){\r\n         $computer_brands = Computer_brands::find($id);\r\n         return $this->render('computer.editComputer', compact('computer_brands'));\r\n     }\r\n-    public function saveEditTrain($id){\r\n+    public function saveEditComputer($id){\r\n         \r\n         $computer_brands = Trains::find($id);\r\n         \r\n         $computer_brands->fill($_POST);\r\n"
+                },
+                {
+                    "date": 1656050654237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         return $this->render('computer.editComputer', compact('computer_brands'));\r\n     }\r\n     public function saveEditComputer($id){\r\n         \r\n-        $computer_brands = Trains::find($id);\r\n+        $computer_brands = Computer_brands::find($id);\r\n         \r\n         $computer_brands->fill($_POST);\r\n         $computer_brands->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-cpt');die;\r\n"
+                },
+                {
+                    "date": 1656050688355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     public function addComputer(){\r\n         $computer_brands = Computer_brands::all();\r\n         return $this->render('computer.addComputer', compact('computer_brands'));\r\n     }\r\n-    public function addComputer(){\r\n+    public function addNewComputer(){\r\n         \r\n         $model = new Computer_brands();\r\n         $model->fill($_POST);\r\n \r\n"
+                }
+            ],
+            "date": 1656050306410,
+            "name": "Commit-0",
+            "content": "<?php \r\nnamespace App\\Controllers;\r\n\r\nuse App\\Models\\Trains;\r\n\r\n\r\n\r\nclass TrainsController extends BaseController{\r\n    public function listTrain(){\r\n        $trains = Trains::all();\r\n        $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n        if(empty($keyword)){\r\n            $trains = Trains::all();\r\n        }else{\r\n            $trains = Trains::where('name', 'like', \"%$keyword%\")->get();\r\n        }\r\n        return $this->render('train.listTrain', compact('trains','keyword'));\r\n    }\r\n    public function addTrain(){\r\n        $trains = Trains::all();\r\n        return $this->render('train.addTrain', compact('trains'));\r\n    }\r\n    public function addNewTrain(){\r\n        \r\n        $model = new Trains();\r\n        $model->fill($_POST);\r\n\r\n        $model->save();\r\n        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n    }\r\n    public function removeTrain($id){\r\n        Trains::destroy($id);\r\n        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n    }\r\n    public function trainEditForm($id){\r\n        $trains = Trains::find($id);\r\n        $passengers = Passengers::all();\r\n        return $this->render('train.editTrain', compact('passengers','trains'));\r\n    }\r\n    public function saveEditTrain($id){\r\n        \r\n        $trains = Trains::find($id);\r\n        \r\n        $trains->fill($_POST);\r\n        $trains->save();\r\n        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n    }\r\n    \r\n\r\n\r\n}\r\n\r\n\r\n\r\n?>"
+        }
+    ]
+}

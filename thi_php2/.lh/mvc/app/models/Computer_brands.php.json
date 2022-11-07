@@ -1,0 +1,78 @@
+{
+    "sourceFile": "mvc/app/models/Computer_brands.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1656047252113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656047322015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,16 @@\n <?php\r\n namespace App\\Models;\r\n use Illuminate\\Database\\Eloquent\\Model;\r\n-class Product  extends Model{\r\n-    protected $table = \"products\";\r\n+class Passengers  extends Model{\r\n+    protected $table = \"passengers\";\r\n     public $timestamps = false;\r\n \r\n-    public function category(){\r\n-        return $this->belongsTo(\\App\\Models\\Category::class, 'category_id', 'id');\r\n+    protected $fillable = [\r\n+        'name','train_id','avatar','birth_date','gender','phone','created_at','updated_at'\r\n+    ];\r\n+\r\n+    public function trains(){\r\n+        return $this->hasMany(\\App\\Models\\Trains::class, 'train_id', 'id');\r\n     }\r\n }\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047339657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\r\n namespace App\\Models;\r\n use Illuminate\\Database\\Eloquent\\Model;\r\n class Passengers  extends Model{\r\n-    protected $table = \"passengers\";\r\n+    protected $table = \"computer_brands\";\r\n     public $timestamps = false;\r\n \r\n     protected $fillable = [\r\n         'name','train_id','avatar','birth_date','gender','phone','created_at','updated_at'\r\n"
+                },
+                {
+                    "date": 1656047350410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     protected $table = \"computer_brands\";\r\n     public $timestamps = false;\r\n \r\n     protected $fillable = [\r\n-        'name','train_id','avatar','birth_date','gender','phone','created_at','updated_at'\r\n+        'name','image','avatar','birth_date','gender','phone','created_at','updated_at'\r\n     ];\r\n \r\n     public function trains(){\r\n         return $this->hasMany(\\App\\Models\\Trains::class, 'train_id', 'id');\r\n"
+                },
+                {
+                    "date": 1656047358700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     protected $table = \"computer_brands\";\r\n     public $timestamps = false;\r\n \r\n     protected $fillable = [\r\n-        'name','image','avatar','birth_date','gender','phone','created_at','updated_at'\r\n+        'name','image','brand_id','birth_date','gender','phone','created_at','updated_at'\r\n     ];\r\n \r\n     public function trains(){\r\n         return $this->hasMany(\\App\\Models\\Trains::class, 'train_id', 'id');\r\n"
+                },
+                {
+                    "date": 1656047372416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     protected $table = \"computer_brands\";\r\n     public $timestamps = false;\r\n \r\n     protected $fillable = [\r\n-        'name','image','brand_id','birth_date','gender','phone','created_at','updated_at'\r\n+        'name','image','brand_id','detail','gender','phone','created_at','updated_at'\r\n     ];\r\n \r\n     public function trains(){\r\n         return $this->hasMany(\\App\\Models\\Trains::class, 'train_id', 'id');\r\n"
+                },
+                {
+                    "date": 1656047381453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     protected $table = \"computer_brands\";\r\n     public $timestamps = false;\r\n \r\n     protected $fillable = [\r\n-        'name','image','brand_id','detail','gender','phone','created_at','updated_at'\r\n+        'name','image','brand_id','detail','price','created_at','updated_at'\r\n     ];\r\n \r\n     public function trains(){\r\n         return $this->hasMany(\\App\\Models\\Trains::class, 'train_id', 'id');\r\n"
+                },
+                {
+                    "date": 1656047409989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n         'name','image','brand_id','detail','price','created_at','updated_at'\r\n     ];\r\n \r\n     public function trains(){\r\n-        return $this->hasMany(\\App\\Models\\Trains::class, 'train_id', 'id');\r\n+        return $this->belongsTo(\\App\\Models\\Trains::class, 'train_id', 'id');\r\n     }\r\n }\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047529939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     protected $fillable = [\r\n         'name','image','brand_id','detail','price','created_at','updated_at'\r\n     ];\r\n \r\n-    public function trains(){\r\n-        return $this->belongsTo(\\App\\Models\\Trains::class, 'train_id', 'id');\r\n+    public function computer_brands(){\r\n+        return $this->belongsTo(\\App\\Models\\Computer_brands::class, 'train_id', 'id');\r\n     }\r\n }\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047543177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n         'name','image','brand_id','detail','price','created_at','updated_at'\r\n     ];\r\n \r\n     public function computer_brands(){\r\n-        return $this->belongsTo(\\App\\Models\\Computer_brands::class, 'train_id', 'id');\r\n+        return $this->belongsTo(\\App\\Models\\Computer_brands::class, 'brand_id', 'id');\r\n     }\r\n }\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047573281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     protected $table = \"computer_brands\";\r\n     public $timestamps = false;\r\n \r\n     protected $fillable = [\r\n-        'name','image','brand_id','detail','price','created_at','updated_at'\r\n+        'name','founding_year','brand_id','detail','price','created_at','updated_at'\r\n     ];\r\n \r\n     public function computer_brands(){\r\n         return $this->belongsTo(\\App\\Models\\Computer_brands::class, 'brand_id', 'id');\r\n"
+                },
+                {
+                    "date": 1656047581475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     protected $table = \"computer_brands\";\r\n     public $timestamps = false;\r\n \r\n     protected $fillable = [\r\n-        'name','founding_year','brand_id','detail','price','created_at','updated_at'\r\n+        'name','founding_year','logo','address','price','created_at','updated_at'\r\n     ];\r\n \r\n     public function computer_brands(){\r\n         return $this->belongsTo(\\App\\Models\\Computer_brands::class, 'brand_id', 'id');\r\n"
+                },
+                {
+                    "date": 1656047588335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     protected $table = \"computer_brands\";\r\n     public $timestamps = false;\r\n \r\n     protected $fillable = [\r\n-        'name','founding_year','logo','address','price','created_at','updated_at'\r\n+        'name','founding_year','logo','address','created_at','updated_at'\r\n     ];\r\n \r\n     public function computer_brands(){\r\n         return $this->belongsTo(\\App\\Models\\Computer_brands::class, 'brand_id', 'id');\r\n"
+                },
+                {
+                    "date": 1656047625482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n         'name','founding_year','logo','address','created_at','updated_at'\r\n     ];\r\n \r\n     public function computer_brands(){\r\n-        return $this->belongsTo(\\App\\Models\\Computer_brands::class, 'brand_id', 'id');\r\n+        return $this->hasMany(\\App\\Models\\Computer_brands::class, 'brand_id', 'id');\r\n     }\r\n }\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047676449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     protected $fillable = [\r\n         'name','founding_year','logo','address','created_at','updated_at'\r\n     ];\r\n \r\n-    public function computer_brands(){\r\n+    public function laptops(){\r\n         return $this->hasMany(\\App\\Models\\Computer_brands::class, 'brand_id', 'id');\r\n     }\r\n }\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656048596759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n <?php\r\n namespace App\\Models;\r\n use Illuminate\\Database\\Eloquent\\Model;\r\n-class Passengers  extends Model{\r\n+class Computer_brands  extends Model{\r\n     protected $table = \"computer_brands\";\r\n     public $timestamps = false;\r\n \r\n     protected $fillable = [\r\n         'name','founding_year','logo','address','created_at','updated_at'\r\n     ];\r\n \r\n     public function laptops(){\r\n-        return $this->hasMany(\\App\\Models\\Computer_brands::class, 'brand_id', 'id');\r\n+        return $this->hasMany(\\App\\Models\\Laptops::class, 'brand_id', 'id');\r\n     }\r\n }\r\n ?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1656047252113,
+            "name": "Commit-0",
+            "content": "<?php\r\nnamespace App\\Models;\r\nuse Illuminate\\Database\\Eloquent\\Model;\r\nclass Product  extends Model{\r\n    protected $table = \"products\";\r\n    public $timestamps = false;\r\n\r\n    public function category(){\r\n        return $this->belongsTo(\\App\\Models\\Category::class, 'category_id', 'id');\r\n    }\r\n}\r\n?>"
+        }
+    ]
+}

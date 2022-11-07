@@ -1,0 +1,46 @@
+{
+    "sourceFile": "mvc/app/views/computer/editComputer.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1656051252046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656051260930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,45 @@\n+@extends('layouts.main')\r\n+@section('title', \"Sửa Chuyến Tàu\")\r\n+@section('content')\r\n+<div class=\"row\">\r\n+    <div class=\"col-md-6 offset-md-3\">\r\n+        <div class=\"card\">\r\n+            <div class=\"card-header\">\r\n+                <h3 class=\"card-title\">Sửa Vé Tàu</h3>\r\n+            </div>\r\n+            <div class=\"card-body\">\r\n+                <form method=\"post\" enctype=\"multipart/form-data\">\r\n+                    <div class=\"form-group\">\r\n+                        <label for=\"\">Name</label>\r\n+                        <input type=\"text\" name=\"name\" class=\"form-control\" value=\"{{$laptops->name}}\">\r\n+                    </div>\r\n+                    <div class=\"form-group\">\r\n+                        <label for=\"\">Brand_id</label>\r\n+                        <input type=\"text\" name=\"brand_id\" class=\"form-control\" value=\"{{$laptops->brand_id}}\">\r\n+                    </div>\r\n+                    <div class=\"form-group\">\r\n+                            <div class=\"row\">\r\n+                                <div class=\"col-6 offset-3\">\r\n+                                    <img src=\"{{BASE_URL . $laptops->image}}\" class=\"img-thumbnail\">\r\n+                                </div>\r\n+                            </div>\r\n+                            <label for=\"\">Image</label>\r\n+                            <input type=\"file\" name=\"image\" class=\"form-control\">\r\n+                    </div>\r\n+                    <div class=\"form-group\">\r\n+                        <label for=\"\">Detail</label>\r\n+                        <input type=\"text\" name=\"detail\" class=\"form-control\" value=\"{{$laptops->detail}}\">\r\n+                    </div>\r\n+                    <div class=\"form-group\">\r\n+                        <label for=\"\">Price</label>\r\n+                        <input type=\"number\" name=\"price\" class=\"form-control\" value=\"{{$laptops->price}}\">\r\n+                    </div>\r\n+                    <div class=\"text-right\">\r\n+                        <button type=\"submit\" class=\"btn btn-sm btn-primary\">Sửa Laptop</button>\r\n+                    </div>\r\n+                </form>\r\n+            </div>\r\n+        </div>\r\n+    </div>\r\n+</div>\r\n+@endsection\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656051266697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n <div class=\"row\">\r\n     <div class=\"col-md-6 offset-md-3\">\r\n         <div class=\"card\">\r\n             <div class=\"card-header\">\r\n-                <h3 class=\"card-title\">Sửa Vé Tàu</h3>\r\n+                <h3 class=\"card-title\">Sửa Computer</h3>\r\n             </div>\r\n             <div class=\"card-body\">\r\n                 <form method=\"post\" enctype=\"multipart/form-data\">\r\n                     <div class=\"form-group\">\r\n"
+                },
+                {
+                    "date": 1656051301362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n                     </div>\r\n                     <div class=\"form-group\">\r\n                             <div class=\"row\">\r\n                                 <div class=\"col-6 offset-3\">\r\n-                                    <img src=\"{{BASE_URL . $laptops->image}}\" class=\"img-thumbnail\">\r\n+                                    <img src=\"{{BASE_URL . $laptops->logo}}\" class=\"img-thumbnail\">\r\n                                 </div>\r\n                             </div>\r\n                             <label for=\"\">Image</label>\r\n                             <input type=\"file\" name=\"image\" class=\"form-control\">\r\n"
+                },
+                {
+                    "date": 1656051306702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n                                 <div class=\"col-6 offset-3\">\r\n                                     <img src=\"{{BASE_URL . $laptops->logo}}\" class=\"img-thumbnail\">\r\n                                 </div>\r\n                             </div>\r\n-                            <label for=\"\">Image</label>\r\n+                            <label for=\"\">Logo</label>\r\n                             <input type=\"file\" name=\"image\" class=\"form-control\">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Detail</label>\r\n"
+                },
+                {
+                    "date": 1656051315791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,18 +23,10 @@\n                                     <img src=\"{{BASE_URL . $laptops->logo}}\" class=\"img-thumbnail\">\r\n                                 </div>\r\n                             </div>\r\n                             <label for=\"\">Logo</label>\r\n-                            <input type=\"file\" name=\"image\" class=\"form-control\">\r\n+                            <input type=\"file\" name=\"logo\" class=\"form-control\">\r\n                     </div>\r\n-                    <div class=\"form-group\">\r\n-                        <label for=\"\">Detail</label>\r\n-                        <input type=\"text\" name=\"detail\" class=\"form-control\" value=\"{{$laptops->detail}}\">\r\n-                    </div>\r\n-                    <div class=\"form-group\">\r\n-                        <label for=\"\">Price</label>\r\n-                        <input type=\"number\" name=\"price\" class=\"form-control\" value=\"{{$laptops->price}}\">\r\n-                    </div>\r\n                     <div class=\"text-right\">\r\n                         <button type=\"submit\" class=\"btn btn-sm btn-primary\">Sửa Laptop</button>\r\n                     </div>\r\n                 </form>\r\n"
+                },
+                {
+                    "date": 1656051571057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n                         <label for=\"\">Name</label>\r\n                         <input type=\"text\" name=\"name\" class=\"form-control\" value=\"{{$laptops->name}}\">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n-                        <label for=\"\">Brand_id</label>\r\n+                        <label for=\"\">Founding_year</label>\r\n                         <input type=\"text\" name=\"brand_id\" class=\"form-control\" value=\"{{$laptops->brand_id}}\">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                             <div class=\"row\">\r\n@@ -26,9 +26,9 @@\n                             <label for=\"\">Logo</label>\r\n                             <input type=\"file\" name=\"logo\" class=\"form-control\">\r\n                     </div>\r\n                     <div class=\"text-right\">\r\n-                        <button type=\"submit\" class=\"btn btn-sm btn-primary\">Sửa Laptop</button>\r\n+                        <button type=\"submit\" class=\"btn btn-sm btn-primary\">Sửa Computer</button>\r\n                     </div>\r\n                 </form>\r\n             </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1656051584973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n                         <input type=\"text\" name=\"name\" class=\"form-control\" value=\"{{$laptops->name}}\">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Founding_year</label>\r\n-                        <input type=\"text\" name=\"brand_id\" class=\"form-control\" value=\"{{$laptops->brand_id}}\">\r\n+                        <input type=\"text\" name=\"founding_year\" class=\"form-control\" value=\"{{$laptops->brand_id}}\">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                             <div class=\"row\">\r\n                                 <div class=\"col-6 offset-3\">\r\n"
+                }
+            ],
+            "date": 1656051252046,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

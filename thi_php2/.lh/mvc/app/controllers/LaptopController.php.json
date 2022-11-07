@@ -1,0 +1,178 @@
+{
+    "sourceFile": "mvc/app/controllers/LaptopController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 40,
+            "patches": [
+                {
+                    "date": 1656047805177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656047824122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+<?php \r\n+\r\n+\r\n+\r\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047835016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <?php \r\n \r\n \r\n \r\n+\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047840307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +0,0 @@\n-<?php \r\n-\r\n-\r\n-\r\n-\r\n-?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047867205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+<?php \r\n+\r\n+\r\n+\r\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047901579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <?php \r\n+namespace App\\Controllers;\r\n+use App\\Models\\Laptops;\r\n \r\n \r\n-\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656047946407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,14 @@\n <?php \r\n namespace App\\Controllers;\r\n use App\\Models\\Laptops;\r\n \r\n+class LaptopsController extends BaseController{\r\n \r\n+\r\n+\r\n+\r\n+}\r\n+\r\n+\r\n+\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656048102537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,15 @@\n namespace App\\Controllers;\r\n use App\\Models\\Laptops;\r\n \r\n class LaptopsController extends BaseController{\r\n+    public function addLaptop(){\r\n+        $laptops = Laptops::all();\r\n+        return $this->render(laptop.addLaptop)\r\n+    }\r\n \r\n \r\n \r\n-\r\n }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656048108200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n class LaptopsController extends BaseController{\r\n     public function addLaptop(){\r\n         $laptops = Laptops::all();\r\n-        return $this->render(laptop.addLaptop)\r\n+        return $this->render('laptop.addLaptop')\r\n     }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656048122225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n class LaptopsController extends BaseController{\r\n     public function addLaptop(){\r\n         $laptops = Laptops::all();\r\n-        return $this->render('laptop.addLaptop')\r\n+        return $this->render('laptop.addLaptop',compact('laptops'))\r\n     }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656048336339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n class LaptopsController extends BaseController{\r\n     public function addLaptop(){\r\n         $laptops = Laptops::all();\r\n-        return $this->render('laptop.addLaptop',compact('laptops'))\r\n+        return $this->render('laptop.addLaptop',compact('laptops'));\r\n     }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656048388964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,9 @@\n namespace App\\Controllers;\r\n use App\\Models\\Laptops;\r\n \r\n class LaptopsController extends BaseController{\r\n-    public function addLaptop(){\r\n-        $laptops = Laptops::all();\r\n-        return $this->render('laptop.addLaptop',compact('laptops'));\r\n-    }\r\n+    \r\n \r\n \r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1656048420734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,19 @@\n <?php \r\n namespace App\\Controllers;\r\n use App\\Models\\Laptops;\r\n \r\n-class LaptopsController extends BaseController{\r\n-    \r\n+class LaptopController extends BaseController{\r\n+    public function listTrain(){\r\n+        $trains = Trains::all();\r\n+        $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n+        if(empty($keyword)){\r\n+            $trains = Trains::all();\r\n+        }else{\r\n+            $trains = Trains::where('name', 'like', \"%$keyword%\")->get();\r\n+        }\r\n+        return $this->render('train.listTrain', compact('trains','keyword'));\r\n+    }\r\n \r\n \r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1656048429339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n namespace App\\Controllers;\r\n use App\\Models\\Laptops;\r\n \r\n class LaptopController extends BaseController{\r\n-    public function listTrain(){\r\n+    public function listLaptops(){\r\n         $trains = Trains::all();\r\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n             $trains = Trains::all();\r\n"
+                },
+                {
+                    "date": 1656048436694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n use App\\Models\\Laptops;\r\n \r\n class LaptopController extends BaseController{\r\n     public function listLaptops(){\r\n-        $trains = Trains::all();\r\n+        $laptops = Trains::all();\r\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n             $trains = Trains::all();\r\n         }else{\r\n"
+                },
+                {
+                    "date": 1656048450140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,12 @@\n use App\\Models\\Laptops;\r\n \r\n class LaptopController extends BaseController{\r\n     public function listLaptops(){\r\n-        $laptops = Trains::all();\r\n+        $laptops = Laptops::all();\r\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n-            $trains = Trains::all();\r\n+            $laptops = Trains::all();\r\n         }else{\r\n             $trains = Trains::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n         return $this->render('train.listTrain', compact('trains','keyword'));\r\n"
+                },
+                {
+                    "date": 1656048461056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n     public function listLaptops(){\r\n         $laptops = Laptops::all();\r\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n-            $laptops = Trains::all();\r\n+            $laptops = Laptops::all();\r\n         }else{\r\n-            $trains = Trains::where('name', 'like', \"%$keyword%\")->get();\r\n+            $laptops = Trains::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n         return $this->render('train.listTrain', compact('trains','keyword'));\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1656048468959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n         $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : \"\";\r\n         if(empty($keyword)){\r\n             $laptops = Laptops::all();\r\n         }else{\r\n-            $laptops = Trains::where('name', 'like', \"%$keyword%\")->get();\r\n+            $laptops = Laptops::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n         return $this->render('train.listTrain', compact('trains','keyword'));\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1656048477010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             $laptops = Laptops::all();\r\n         }else{\r\n             $laptops = Laptops::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n-        return $this->render('train.listTrain', compact('trains','keyword'));\r\n+        return $this->render('laptop.listTrain', compact('trains','keyword'));\r\n     }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656048482692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             $laptops = Laptops::all();\r\n         }else{\r\n             $laptops = Laptops::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n-        return $this->render('laptop.listTrain', compact('trains','keyword'));\r\n+        return $this->render('laptop.listLaptop', compact('trains','keyword'));\r\n     }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656048522737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             $laptops = Laptops::all();\r\n         }else{\r\n             $laptops = Laptops::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n-        return $this->render('laptop.listLaptop', compact('trains','keyword'));\r\n+        return $this->render('laptop.listLaptop', compact('laptops','keyword'));\r\n     }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656048707332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,13 @@\n             $laptops = Laptops::where('name', 'like', \"%$keyword%\")->get();\r\n         }\r\n         return $this->render('laptop.listLaptop', compact('laptops','keyword'));\r\n     }\r\n+    public function addLaptop(){\r\n+        $laptops = Laptops::all();\r\n+        return $this->render('train.addTrain', compact('trains'));\r\n+        \r\n+    }\r\n \r\n \r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1656048715182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n         return $this->render('laptop.listLaptop', compact('laptops','keyword'));\r\n     }\r\n     public function addLaptop(){\r\n         $laptops = Laptops::all();\r\n-        return $this->render('train.addTrain', compact('trains'));\r\n+        return $this->render('laptop.addLaptop', compact('trains'));\r\n         \r\n     }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656048741157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,22 @@\n         return $this->render('laptop.listLaptop', compact('laptops','keyword'));\r\n     }\r\n     public function addLaptop(){\r\n         $laptops = Laptops::all();\r\n-        return $this->render('laptop.addLaptop', compact('trains'));\r\n+        return $this->render('laptop.addLaptop', compact('laptops'));\r\n         \r\n     }\r\n+    public function addNewTrain(){\r\n+        \r\n+        $model = new Trains();\r\n+        $model->fill($_POST);\r\n \r\n+        $model->save();\r\n+        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n+    }\r\n \r\n \r\n+\r\n }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656048748637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $laptops = Laptops::all();\r\n         return $this->render('laptop.addLaptop', compact('laptops'));\r\n         \r\n     }\r\n-    public function addNewTrain(){\r\n+    public function addNewLaptop(){\r\n         \r\n         $model = new Trains();\r\n         $model->fill($_POST);\r\n \r\n"
+                },
+                {
+                    "date": 1656048763763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,13 @@\n         \r\n     }\r\n     public function addNewLaptop(){\r\n         \r\n-        $model = new Trains();\r\n+        $model = new Laptops();\r\n         $model->fill($_POST);\r\n \r\n         $model->save();\r\n-        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n+        header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656048935081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,17 @@\n     public function addNewLaptop(){\r\n         \r\n         $model = new Laptops();\r\n         $model->fill($_POST);\r\n-\r\n+        // xử lý ảnh\r\n+        $filename = \"\";\r\n+        $avatarFile = $_FILES['avatar'];\r\n+        if($avatarFile['size'] > 0){\r\n+            $filename = uniqid() . '-' . $avatarFile['name'];\r\n+            move_uploaded_file($avatarFile['tmp_name'], './public/uploads/avatars/' . $filename);\r\n+            $filename = \"public/uploads/avatars/\" . $filename;\r\n+        }\r\n+        $model->avatar = $filename;\r\n         $model->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1656048950913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         $model = new Laptops();\r\n         $model->fill($_POST);\r\n         // xử lý ảnh\r\n         $filename = \"\";\r\n-        $avatarFile = $_FILES['avatar'];\r\n+        $avatarFile = $_FILES['image'];\r\n         if($avatarFile['size'] > 0){\r\n             $filename = uniqid() . '-' . $avatarFile['name'];\r\n             move_uploaded_file($avatarFile['tmp_name'], './public/uploads/avatars/' . $filename);\r\n             $filename = \"public/uploads/avatars/\" . $filename;\r\n"
+                },
+                {
+                    "date": 1656049920936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n             $filename = uniqid() . '-' . $avatarFile['name'];\r\n             move_uploaded_file($avatarFile['tmp_name'], './public/uploads/avatars/' . $filename);\r\n             $filename = \"public/uploads/avatars/\" . $filename;\r\n         }\r\n-        $model->avatar = $filename;\r\n+        $model->image = $filename;\r\n         $model->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1656049968614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,11 +33,29 @@\n         $model->image = $filename;\r\n         $model->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n+    public function removeTrain($id){\r\n+        Trains::destroy($id);\r\n+        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n+    }\r\n+    public function trainEditForm($id){\r\n+        $trains = Trains::find($id);\r\n+        $passengers = Passengers::all();\r\n+        return $this->render('train.editTrain', compact('passengers','trains'));\r\n+    }\r\n+    public function saveEditTrain($id){\r\n+        \r\n+        $trains = Trains::find($id);\r\n+        \r\n+        $trains->fill($_POST);\r\n+        $trains->save();\r\n+        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n+    }\r\n \r\n \r\n \r\n+\r\n }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656049976356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n         $model->image = $filename;\r\n         $model->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n-    public function removeTrain($id){\r\n+    public function removeLaptop($id){\r\n         Trains::destroy($id);\r\n         header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n     }\r\n     public function trainEditForm($id){\r\n"
+                },
+                {
+                    "date": 1656049982656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         $model->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n     public function removeLaptop($id){\r\n-        Trains::destroy($id);\r\n+        Laptops::destroy($id);\r\n         header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n     }\r\n     public function trainEditForm($id){\r\n         $trains = Trains::find($id);\r\n"
+                },
+                {
+                    "date": 1656049993365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n         header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n     public function removeLaptop($id){\r\n         Laptops::destroy($id);\r\n-        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n+        header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n     public function trainEditForm($id){\r\n         $trains = Trains::find($id);\r\n         $passengers = Passengers::all();\r\n"
+                },
+                {
+                    "date": 1656050001240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n         $trains = Trains::find($id);\r\n         \r\n         $trains->fill($_POST);\r\n         $trains->save();\r\n-        header(\"location:\" . BASE_URL . 'danh-sach-chuyen-tau');die;\r\n+        header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656050014982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,12 +44,12 @@\n         return $this->render('train.editTrain', compact('passengers','trains'));\r\n     }\r\n     public function saveEditTrain($id){\r\n         \r\n-        $trains = Trains::find($id);\r\n+        $laptops = Laptops::find($id);\r\n         \r\n-        $trains->fill($_POST);\r\n-        $trains->save();\r\n+        $laptops->fill($_POST);\r\n+        $laptops->save();\r\n         header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656050020877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         $trains = Trains::find($id);\r\n         $passengers = Passengers::all();\r\n         return $this->render('train.editTrain', compact('passengers','trains'));\r\n     }\r\n-    public function saveEditTrain($id){\r\n+    public function saveEditLaptop($id){\r\n         \r\n         $laptops = Laptops::find($id);\r\n         \r\n         $laptops->fill($_POST);\r\n"
+                },
+                {
+                    "date": 1656050033243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n         Laptops::destroy($id);\r\n         header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n     public function trainEditForm($id){\r\n-        $trains = Trains::find($id);\r\n+        $laptops = Trains::find($id);\r\n         $passengers = Passengers::all();\r\n         return $this->render('train.editTrain', compact('passengers','trains'));\r\n     }\r\n     public function saveEditLaptop($id){\r\n"
+                },
+                {
+                    "date": 1656050060861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,10 @@\n     public function removeLaptop($id){\r\n         Laptops::destroy($id);\r\n         header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n-    public function trainEditForm($id){\r\n-        $laptops = Trains::find($id);\r\n+    public function laptopEditForm($id){\r\n+        $laptops = Laptops::find($id);\r\n         $passengers = Passengers::all();\r\n         return $this->render('train.editTrain', compact('passengers','trains'));\r\n     }\r\n     public function saveEditLaptop($id){\r\n"
+                },
+                {
+                    "date": 1656050072612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n         header(\"location:\" . BASE_URL . 'danh-sach-lap-top');die;\r\n     }\r\n     public function laptopEditForm($id){\r\n         $laptops = Laptops::find($id);\r\n-        $passengers = Passengers::all();\r\n+        // $passengers = Passengers::all();\r\n         return $this->render('train.editTrain', compact('passengers','trains'));\r\n     }\r\n     public function saveEditLaptop($id){\r\n         \r\n"
+                },
+                {
+                    "date": 1656050081673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     }\r\n     public function laptopEditForm($id){\r\n         $laptops = Laptops::find($id);\r\n         // $passengers = Passengers::all();\r\n-        return $this->render('train.editTrain', compact('passengers','trains'));\r\n+        return $this->render('train.editTrain', compact('laptops'));\r\n     }\r\n     public function saveEditLaptop($id){\r\n         \r\n         $laptops = Laptops::find($id);\r\n"
+                },
+                {
+                    "date": 1656050090172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     }\r\n     public function laptopEditForm($id){\r\n         $laptops = Laptops::find($id);\r\n         // $passengers = Passengers::all();\r\n-        return $this->render('train.editTrain', compact('laptops'));\r\n+        return $this->render('laptop.editLaptop', compact('laptops'));\r\n     }\r\n     public function saveEditLaptop($id){\r\n         \r\n         $laptops = Laptops::find($id);\r\n"
+                }
+            ],
+            "date": 1656047805177,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

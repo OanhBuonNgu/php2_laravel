@@ -1,0 +1,90 @@
+{
+    "sourceFile": "mvc/app/views/laptop/listLaptop.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1656049046736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656049068272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             <table class=\"table table-hover\" border=\"1\">\r\n                 <thead>\r\n                     <th>ID</th>\r\n                     <th>Name</th>\r\n-                    <th>Train_id</th>\r\n+                    <th>image</th>\r\n                     <th>Avatar</th>\r\n                     <th>Birth_date</th>\r\n                     <th>Gender</th>\r\n                     <th>Phone</th>\r\n"
+                },
+                {
+                    "date": 1656049077238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                 <thead>\r\n                     <th>ID</th>\r\n                     <th>Name</th>\r\n                     <th>image</th>\r\n-                    <th>Avatar</th>\r\n+                    <th>brand_id</th>\r\n                     <th>Birth_date</th>\r\n                     <th>Gender</th>\r\n                     <th>Phone</th>\r\n                     <th>Created_at</th>\r\n"
+                },
+                {
+                    "date": 1656049089457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,10 @@\n                 <thead>\r\n                     <th>ID</th>\r\n                     <th>Name</th>\r\n                     <th>image</th>\r\n-                    <th>brand_id</th>\r\n-                    <th>Birth_date</th>\r\n+                    <th>Brand_id</th>\r\n+                    <th>Detail</th>\r\n                     <th>Gender</th>\r\n                     <th>Phone</th>\r\n                     <th>Created_at</th>\r\n                     <th>Updated_at</th>\r\n"
+                },
+                {
+                    "date": 1656049095768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n                     <th>Name</th>\r\n                     <th>image</th>\r\n                     <th>Brand_id</th>\r\n                     <th>Detail</th>\r\n-                    <th>Gender</th>\r\n+                    <th>Price</th>\r\n                     <th>Phone</th>\r\n                     <th>Created_at</th>\r\n                     <th>Updated_at</th>\r\n                     <th>\r\n"
+                },
+                {
+                    "date": 1656049103025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n                     <th>image</th>\r\n                     <th>Brand_id</th>\r\n                     <th>Detail</th>\r\n                     <th>Price</th>\r\n-                    <th>Phone</th>\r\n                     <th>Created_at</th>\r\n                     <th>Updated_at</th>\r\n                     <th>\r\n                         <a href=\"tao-hk\">Add</a>\r\n"
+                },
+                {
+                    "date": 1656049109539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,8 @@\n                     @foreach($passengers as $ps)\r\n                         <tr>\r\n                             <td>{{$ps->id}}</td>\r\n                             <td>{{$ps->name}}</td>\r\n-                            <td>{{$ps->train_id}}</td>\r\n                             <td>\r\n                                 <img src=\"{{ BASE_URL . $ps->avatar}}\" width=\"70\">\r\n                             </td>\r\n                             <td>{{$ps->birth_date}}</td>\r\n"
+                },
+                {
+                    "date": 1656049115504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n                         <tr>\r\n                             <td>{{$ps->id}}</td>\r\n                             <td>{{$ps->name}}</td>\r\n                             <td>\r\n-                                <img src=\"{{ BASE_URL . $ps->avatar}}\" width=\"70\">\r\n+                                <img src=\"{{ BASE_URL . $ps->image}}\" width=\"70\">\r\n                             </td>\r\n                             <td>{{$ps->birth_date}}</td>\r\n                             <td>\r\n                                 {{$ps->gender}}\r\n"
+                },
+                {
+                    "date": 1656049126287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                     </th>\r\n                     <th></th>\r\n                 </thead>\r\n                 <tbody>\r\n-                    @foreach($passengers as $ps)\r\n+                    @foreach($lp as $ps)\r\n                         <tr>\r\n                             <td>{{$ps->id}}</td>\r\n                             <td>{{$ps->name}}</td>\r\n                             <td>\r\n"
+                },
+                {
+                    "date": 1656049132098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                     </th>\r\n                     <th></th>\r\n                 </thead>\r\n                 <tbody>\r\n-                    @foreach($lp as $ps)\r\n+                    @foreach($laptops as $ps)\r\n                         <tr>\r\n                             <td>{{$ps->id}}</td>\r\n                             <td>{{$ps->name}}</td>\r\n                             <td>\r\n"
+                },
+                {
+                    "date": 1656049148775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                     </th>\r\n                     <th></th>\r\n                 </thead>\r\n                 <tbody>\r\n-                    @foreach($laptops as $ps)\r\n+                    @foreach($laptops as $lt)\r\n                         <tr>\r\n                             <td>{{$ps->id}}</td>\r\n                             <td>{{$ps->name}}</td>\r\n                             <td>\r\n"
+                },
+                {
+                    "date": 1656049155646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,22 +34,22 @@\n                 </thead>\r\n                 <tbody>\r\n                     @foreach($laptops as $lt)\r\n                         <tr>\r\n-                            <td>{{$ps->id}}</td>\r\n-                            <td>{{$ps->name}}</td>\r\n+                            <td>{{$lt->id}}</td>\r\n+                            <td>{{$lt->name}}</td>\r\n                             <td>\r\n-                                <img src=\"{{ BASE_URL . $ps->image}}\" width=\"70\">\r\n+                                <img src=\"{{ BASE_URL . $lt->image}}\" width=\"70\">\r\n                             </td>\r\n-                            <td>{{$ps->birth_date}}</td>\r\n+                            <td>{{$lt->birth_date}}</td>\r\n                             <td>\r\n-                                {{$ps->gender}}\r\n+                                {{$lt->gender}}\r\n                             </td>\r\n                             <td>\r\n-                                {{$ps->phone}}\r\n+                                {{$lt->phone}}\r\n                             </td>\r\n-                            <td>{{$ps->created_at}}</td>\r\n-                            <td>{{$ps->updated_at}}</td>\r\n+                            <td>{{$lt->created_at}}</td>\r\n+                            <td>{{$lt->updated_at}}</td>\r\n                             <td>\r\n                                 <a class=\"btn btn-sm btn-info\" href=\"sua-hk/{{ $ps->id }}\">Sửa</a>\r\n                             </td>\r\n                             <td><a class=\"btn btn-sm btn-danger btn-remove\" href=\"xoa-hk/{{ $ps->id }}\">Xóa</a></td>\r\n"
+                },
+                {
+                    "date": 1656049169289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n                             <td>{{$lt->name}}</td>\r\n                             <td>\r\n                                 <img src=\"{{ BASE_URL . $lt->image}}\" width=\"70\">\r\n                             </td>\r\n-                            <td>{{$lt->birth_date}}</td>\r\n+                            <td>{{$lt->brand_id}}</td>\r\n                             <td>\r\n                                 {{$lt->gender}}\r\n                             </td>\r\n                             <td>\r\n"
+                },
+                {
+                    "date": 1656049174714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n                                 <img src=\"{{ BASE_URL . $lt->image}}\" width=\"70\">\r\n                             </td>\r\n                             <td>{{$lt->brand_id}}</td>\r\n                             <td>\r\n-                                {{$lt->gender}}\r\n+                                {{$lt->Detail}}\r\n                             </td>\r\n                             <td>\r\n                                 {{$lt->phone}}\r\n                             </td>\r\n"
+                },
+                {
+                    "date": 1656049180864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n                             <td>\r\n                                 {{$lt->Detail}}\r\n                             </td>\r\n                             <td>\r\n-                                {{$lt->phone}}\r\n+                                {{$lt->Price}}\r\n                             </td>\r\n                             <td>{{$lt->created_at}}</td>\r\n                             <td>{{$lt->updated_at}}</td>\r\n                             <td>\r\n"
+                },
+                {
+                    "date": 1656049189632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,11 +49,11 @@\n                             </td>\r\n                             <td>{{$lt->created_at}}</td>\r\n                             <td>{{$lt->updated_at}}</td>\r\n                             <td>\r\n-                                <a class=\"btn btn-sm btn-info\" href=\"sua-hk/{{ $ps->id }}\">Sửa</a>\r\n+                                <a class=\"btn btn-sm btn-info\" href=\"sua-hk/{{ $lt->id }}\">Sửa</a>\r\n                             </td>\r\n-                            <td><a class=\"btn btn-sm btn-danger btn-remove\" href=\"xoa-hk/{{ $ps->id }}\">Xóa</a></td>\r\n+                            <td><a class=\"btn btn-sm btn-danger btn-remove\" href=\"xoa-hk/{{ $lt->id }}\">Xóa</a></td>\r\n                         </tr>\r\n                     @endforeach\r\n                 </tbody>\r\n             </table>\r\n"
+                },
+                {
+                    "date": 1656049196155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,11 +49,11 @@\n                             </td>\r\n                             <td>{{$lt->created_at}}</td>\r\n                             <td>{{$lt->updated_at}}</td>\r\n                             <td>\r\n-                                <a class=\"btn btn-sm btn-info\" href=\"sua-hk/{{ $lt->id }}\">Sửa</a>\r\n+                                <a class=\"btn btn-sm btn-info\" href=\"sua-lt/{{ $lt->id }}\">Sửa</a>\r\n                             </td>\r\n-                            <td><a class=\"btn btn-sm btn-danger btn-remove\" href=\"xoa-hk/{{ $lt->id }}\">Xóa</a></td>\r\n+                            <td><a class=\"btn btn-sm btn-danger btn-remove\" href=\"xoa-lt/{{ $lt->id }}\">Xóa</a></td>\r\n                         </tr>\r\n                     @endforeach\r\n                 </tbody>\r\n             </table>\r\n"
+                },
+                {
+                    "date": 1656049601789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n                     <th>Price</th>\r\n                     <th>Created_at</th>\r\n                     <th>Updated_at</th>\r\n                     <th>\r\n-                        <a href=\"tao-hk\">Add</a>\r\n+                        <a href=\"tao-lt\">Add</a>\r\n                     </th>\r\n                     <th></th>\r\n                 </thead>\r\n                 <tbody>\r\n"
+                },
+                {
+                    "date": 1656050221816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,12 +41,12 @@\n                                 <img src=\"{{ BASE_URL . $lt->image}}\" width=\"70\">\r\n                             </td>\r\n                             <td>{{$lt->brand_id}}</td>\r\n                             <td>\r\n-                                {{$lt->Detail}}\r\n+                                {{$lt->detail}}\r\n                             </td>\r\n                             <td>\r\n-                                {{$lt->Price}}\r\n+                                {{$lt->drice}}\r\n                             </td>\r\n                             <td>{{$lt->created_at}}</td>\r\n                             <td>{{$lt->updated_at}}</td>\r\n                             <td>\r\n"
+                }
+            ],
+            "date": 1656049046736,
+            "name": "Commit-0",
+            "content": "@extends('layouts.main')\r\n@section('content')\r\n<div class=\"col-12\">\r\n    <div class=\"card\">\r\n        <div class=\"card-header\">\r\n            <form action=\"\" method=\"get\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-4\">\r\n                        <div class=\"input-group input-group-sm\">\r\n                            <input type=\"text\" class=\"form-control\" name=\"keyword\" value=\"{{$keyword}}\">\r\n                            <span class=\"input-group-append\">\r\n                              <button type=\"submit\" class=\"btn btn-info btn-flat\">Tìm!</button>\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </form>\r\n        </div>\r\n        <div class=\"car-body\">\r\n            <table class=\"table table-hover\" border=\"1\">\r\n                <thead>\r\n                    <th>ID</th>\r\n                    <th>Name</th>\r\n                    <th>Train_id</th>\r\n                    <th>Avatar</th>\r\n                    <th>Birth_date</th>\r\n                    <th>Gender</th>\r\n                    <th>Phone</th>\r\n                    <th>Created_at</th>\r\n                    <th>Updated_at</th>\r\n                    <th>\r\n                        <a href=\"tao-hk\">Add</a>\r\n                    </th>\r\n                    <th></th>\r\n                </thead>\r\n                <tbody>\r\n                    @foreach($passengers as $ps)\r\n                        <tr>\r\n                            <td>{{$ps->id}}</td>\r\n                            <td>{{$ps->name}}</td>\r\n                            <td>{{$ps->train_id}}</td>\r\n                            <td>\r\n                                <img src=\"{{ BASE_URL . $ps->avatar}}\" width=\"70\">\r\n                            </td>\r\n                            <td>{{$ps->birth_date}}</td>\r\n                            <td>\r\n                                {{$ps->gender}}\r\n                            </td>\r\n                            <td>\r\n                                {{$ps->phone}}\r\n                            </td>\r\n                            <td>{{$ps->created_at}}</td>\r\n                            <td>{{$ps->updated_at}}</td>\r\n                            <td>\r\n                                <a class=\"btn btn-sm btn-info\" href=\"sua-hk/{{ $ps->id }}\">Sửa</a>\r\n                            </td>\r\n                            <td><a class=\"btn btn-sm btn-danger btn-remove\" href=\"xoa-hk/{{ $ps->id }}\">Xóa</a></td>\r\n                        </tr>\r\n                    @endforeach\r\n                </tbody>\r\n            </table>\r\n        </div>\r\n    </div>\r\n</div>\r\n@endsection\r\n\r\n@section('page-script')\r\n<script>\r\n    $(document).ready(function(){\r\n        $('.btn-remove').click(function(){\r\n            alert('Bạn thực sự muốn xóa?');\r\n        });\r\n    });\r\n</script>\r\n@endsection"
+        }
+    ]
+}

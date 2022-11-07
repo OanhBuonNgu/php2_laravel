@@ -1,0 +1,26 @@
+{
+    "sourceFile": "mvc/app/models/Laptops.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1656047504090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656047665593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     protected $fillable = [\n         'name','image','brand_id','detail','price','created_at','updated_at'\n     ];\n \n-    public function laptops(){\n-        return $this->belongsTo(\\App\\Models\\Laptops::class, 'brand_id', 'id');\n+    public function computer_brands(){\n+        return $this->belongsTo(\\App\\Models\\Computer_brands::class, 'brand_id', 'id');\n     }\n }\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1656048584392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n namespace App\\Models;\n use Illuminate\\Database\\Eloquent\\Model;\n-class Passengers  extends Model{\n+class Laptops  extends Model{\n     protected $table = \"laptops\";\n     public $timestamps = false;\n \n     protected $fillable = [\n"
+                }
+            ],
+            "date": 1656047504090,
+            "name": "Commit-0",
+            "content": "<?php\nnamespace App\\Models;\nuse Illuminate\\Database\\Eloquent\\Model;\nclass Passengers  extends Model{\n    protected $table = \"laptops\";\n    public $timestamps = false;\n\n    protected $fillable = [\n        'name','image','brand_id','detail','price','created_at','updated_at'\n    ];\n\n    public function laptops(){\n        return $this->belongsTo(\\App\\Models\\Laptops::class, 'brand_id', 'id');\n    }\n}\n?>"
+        }
+    ]
+}

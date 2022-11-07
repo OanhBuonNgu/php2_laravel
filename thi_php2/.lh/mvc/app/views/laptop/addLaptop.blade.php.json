@@ -1,0 +1,66 @@
+{
+    "sourceFile": "mvc/app/views/laptop/addLaptop.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1656049249402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656049255032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n <div class=\"row\">\r\n     <div class=\"col-md-6 offset-md-3\">\r\n         <div class=\"card\">\r\n             <div class=\"card-header\">\r\n-                <h3 class=\"card-title\">Thêm Mới Hành Khách</h3>\r\n+                <h3 class=\"card-title\">Thêm Mới Laptops</h3>\r\n             </div>\r\n             <div class=\"card-body\">\r\n                 <form method=\"post\" enctype=\"multipart/form-data\">\r\n                     <div class=\"form-group\">\r\n"
+                },
+                {
+                    "date": 1656049279884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n                         <label for=\"\">Train_id</label>\r\n                         <input type=\"text\" name=\"train_id\" class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n-                        <label for=\"\">Avatar </label>\r\n+                        <label for=\"\">Image </label>\r\n                         <input type=\"file\" name=\"avatar\" class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Gender</label>\r\n"
+                },
+                {
+                    "date": 1656049287963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,14 +13,10 @@\n                         <label for=\"\">Name</label>\r\n                         <input type=\"text\" name=\"name\" class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n-                        <label for=\"\">Train_id</label>\r\n-                        <input type=\"text\" name=\"train_id\" class=\"form-control\" \">\r\n-                    </div>\r\n-                    <div class=\"form-group\">\r\n                         <label for=\"\">Image </label>\r\n-                        <input type=\"file\" name=\"avatar\" class=\"form-control\" \">\r\n+                        <input type=\"file\" name=\"image\" class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Gender</label>\r\n                         <input type=\"text\" name=\"gender\"  class=\"form-control\" \">\r\n"
+                },
+                {
+                    "date": 1656049301722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n                         <label for=\"\">Image </label>\r\n                         <input type=\"file\" name=\"image\" class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n-                        <label for=\"\">Gender</label>\r\n+                        <label for=\"\">Brand_id</label>\r\n                         <input type=\"text\" name=\"gender\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Phone</label>\r\n"
+                },
+                {
+                    "date": 1656049309191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n                         <input type=\"file\" name=\"image\" class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Brand_id</label>\r\n-                        <input type=\"text\" name=\"gender\"  class=\"form-control\" \">\r\n+                        <input type=\"text\" name=\"brand_id\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Phone</label>\r\n                         <input type=\"number\" name=\"phone\"  class=\"form-control\" \">\r\n"
+                },
+                {
+                    "date": 1656049315329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                         <label for=\"\">Brand_id</label>\r\n                         <input type=\"text\" name=\"brand_id\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n-                        <label for=\"\">Phone</label>\r\n+                        <label for=\"\">Detail</label>\r\n                         <input type=\"number\" name=\"phone\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"text-right\">\r\n                         <button type=\"submit\" class=\"btn btn-sm btn-primary\">Thêm Hành Khách</button>\r\n"
+                },
+                {
+                    "date": 1656049321334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n                         <input type=\"text\" name=\"brand_id\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Detail</label>\r\n-                        <input type=\"number\" name=\"phone\"  class=\"form-control\" \">\r\n+                        <input type=\"text\" name=\"phone\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"text-right\">\r\n                         <button type=\"submit\" class=\"btn btn-sm btn-primary\">Thêm Hành Khách</button>\r\n                     </div>\r\n"
+                },
+                {
+                    "date": 1656049334103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n                         <input type=\"text\" name=\"brand_id\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Detail</label>\r\n-                        <input type=\"text\" name=\"phone\"  class=\"form-control\" \">\r\n+                        <input type=\"text\" name=\"detail\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"text-right\">\r\n                         <button type=\"submit\" class=\"btn btn-sm btn-primary\">Thêm Hành Khách</button>\r\n                     </div>\r\n"
+                },
+                {
+                    "date": 1656049339598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,12 @@\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Detail</label>\r\n                         <input type=\"text\" name=\"detail\"  class=\"form-control\" \">\r\n                     </div>\r\n+                    <div class=\"form-group\">\r\n+                        <label for=\"\">Detail</label>\r\n+                        <input type=\"text\" name=\"detail\"  class=\"form-control\" \">\r\n+                    </div>\r\n                     <div class=\"text-right\">\r\n                         <button type=\"submit\" class=\"btn btn-sm btn-primary\">Thêm Hành Khách</button>\r\n                     </div>\r\n                 </form>\r\n"
+                },
+                {
+                    "date": 1656049348367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,10 @@\n                         <label for=\"\">Detail</label>\r\n                         <input type=\"text\" name=\"detail\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n-                        <label for=\"\">Detail</label>\r\n-                        <input type=\"text\" name=\"detail\"  class=\"form-control\" \">\r\n+                        <label for=\"\">Price</label>\r\n+                        <input type=\"text\" name=\"price\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"text-right\">\r\n                         <button type=\"submit\" class=\"btn btn-sm btn-primary\">Thêm Hành Khách</button>\r\n                     </div>\r\n"
+                },
+                {
+                    "date": 1656049359693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,12 +26,12 @@\n                         <input type=\"text\" name=\"detail\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"form-group\">\r\n                         <label for=\"\">Price</label>\r\n-                        <input type=\"text\" name=\"price\"  class=\"form-control\" \">\r\n+                        <input type=\"number\" name=\"price\"  class=\"form-control\" \">\r\n                     </div>\r\n                     <div class=\"text-right\">\r\n-                        <button type=\"submit\" class=\"btn btn-sm btn-primary\">Thêm Hành Khách</button>\r\n+                        <button type=\"submit\" class=\"btn btn-sm btn-primary\">Thêm Laptop</button>\r\n                     </div>\r\n                 </form>\r\n             </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1656051284575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n @extends('layouts.main')\r\n-@section('title', \"Thêm Mới Hành Khách\")\r\n+@section('title', \"Thêm Mới \")\r\n @section('content')\r\n <div class=\"row\">\r\n     <div class=\"col-md-6 offset-md-3\">\r\n         <div class=\"card\">\r\n"
+                }
+            ],
+            "date": 1656049249402,
+            "name": "Commit-0",
+            "content": "@extends('layouts.main')\r\n@section('title', \"Thêm Mới Hành Khách\")\r\n@section('content')\r\n<div class=\"row\">\r\n    <div class=\"col-md-6 offset-md-3\">\r\n        <div class=\"card\">\r\n            <div class=\"card-header\">\r\n                <h3 class=\"card-title\">Thêm Mới Hành Khách</h3>\r\n            </div>\r\n            <div class=\"card-body\">\r\n                <form method=\"post\" enctype=\"multipart/form-data\">\r\n                    <div class=\"form-group\">\r\n                        <label for=\"\">Name</label>\r\n                        <input type=\"text\" name=\"name\" class=\"form-control\" \">\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label for=\"\">Train_id</label>\r\n                        <input type=\"text\" name=\"train_id\" class=\"form-control\" \">\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label for=\"\">Avatar </label>\r\n                        <input type=\"file\" name=\"avatar\" class=\"form-control\" \">\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label for=\"\">Gender</label>\r\n                        <input type=\"text\" name=\"gender\"  class=\"form-control\" \">\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label for=\"\">Phone</label>\r\n                        <input type=\"number\" name=\"phone\"  class=\"form-control\" \">\r\n                    </div>\r\n                    <div class=\"text-right\">\r\n                        <button type=\"submit\" class=\"btn btn-sm btn-primary\">Thêm Hành Khách</button>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n@endsection"
+        }
+    ]
+}
